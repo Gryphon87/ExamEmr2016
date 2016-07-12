@@ -8,9 +8,9 @@ def reduce():
 	for pipe in sys.stdin:
 		line = pipe.strip('\n').split('\t')
 		machine = line[0]
-		time = int(line[1]) + results.get(machine)
+		time = int(line[1])
 		#add the key to the dictionary, adding or incrementing the time value
-		results[machine].add(time)
+		results[machine].add(time) + results.get(machine)
 
 	for key in results:
 		print('Macchina ' + key + ': ' + str(results[key]))
