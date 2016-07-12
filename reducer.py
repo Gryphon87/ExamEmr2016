@@ -4,7 +4,7 @@ from collections import defaultdict
 
 
 def reduce():
-	results = defaultdict(set)	
+	results = defaultdict(int)	
 	for pipe in sys.stdin:
 		line = pipe.strip('\n').split('\t')
 		machine = line[0]
