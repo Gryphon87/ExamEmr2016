@@ -8,7 +8,7 @@ def reduce():
 	for pipe in sys.stdin:
 		line = pipe.strip('\n').split('\t')
 		machine = line[0]
-		time = int(line[1]) + int(results.get(machine))
+		time = int(line[1]) + results.get(machine)
 		#add the key to the dictionary, adding or incrementing the time value
 		results[machine].add(time)
 
