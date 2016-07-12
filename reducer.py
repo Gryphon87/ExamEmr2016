@@ -11,8 +11,7 @@ def reduce():
 		time = int(line[1])
 		#add the key to the dictionary, adding or incrementing the time value
 		my_dict[machine].add(time + int(my_dict.get(machine))
-	for key in my_dict:
-		print('Macchina ' + key + ': ' + str(my_dict[key]))
+	print my_dict
 
 if __name__ == '__main__':
 	reduce()
