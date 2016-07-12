@@ -13,7 +13,7 @@ def reduce():
 		#add the key to the dictionary, adding or incrementing the time value
 		data[machine].add(time + int(data.get(machine))
 	for key in data:
-		print 'Macchina 'key + ': ' + data.get(key) + ' minuti'
+		print ('Macchina 'key + ': ' + data.get(key) + ' minuti')
 
 if __name__ == '__main__':
 	reduce()

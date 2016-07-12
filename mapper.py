@@ -5,7 +5,7 @@ def map():
 		data = line.strip('\n').split(';')
 		machine_id = data[2]
 		time = data[3]
-		print machine_id + '\t' + time
+		print (machine_id + '\t' + time)
 						
 if __name__ == '__main__':
 	map()
