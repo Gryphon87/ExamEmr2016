@@ -10,7 +10,10 @@ def reduce():
 		machine = line[0]
 		time = int(line[1])
 		#add the key to the dictionary, adding or incrementing the time value
-		results[machine] = (time + results.get(machine))
+   		if results[machine] in results:
+        	results[machine] = time
+    	else:
+       		results[machine] += time
 
 	for key in results:
 		print('Macchina ' + key + ': ' + str(results[key]))
