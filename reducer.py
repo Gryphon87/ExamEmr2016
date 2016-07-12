@@ -14,8 +14,8 @@ def reduce():
 		#add the key to the dictionary, adding or incrementing the time value
 		results[machine].add(time + int(results.get(machine))
 
-	for key in results:
-		print key + '\t' + results.get(key)
+	for key, value in results.iteritems():
+		print key + '\t' + value
 
 if __name__ == '__main__':
 	reduce()
