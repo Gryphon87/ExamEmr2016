@@ -15,7 +15,7 @@ def reduce():
 		else:
 			results[machine] += time
 
-	for key in results:
+	for key in sorted(results):
 		print('Macchina ' + key + ': ' + str(results[key]))
 
 if __name__ == '__main__':
