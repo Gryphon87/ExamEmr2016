@@ -1,18 +1,19 @@
 #!/usr/bin/python
 import sys
-from collections import defaultdict
-
 
 def reduce():
-	current = 0
+	#support variables
+	current = -99
 	ctime = 0
 	for pipe in sys.stdin:
 		line = pipe.strip('\n').split('\t')
 		machine = line[0]
 		time = int(line[1])
+
 		# the first iteration will override the current var to the machine var
-		if (current == 0):
+		if (current == -99):
 			current = machine
+
 		# if the machine doesn't change it will add the time
 		if (machine == current):
 			ctime += time
@@ -21,6 +22,7 @@ def reduce():
 			print ('Machine ' + str(current) + ': ' + str(ctime))
 			current = machine
 			ctime = time
+
 	#print the last item
 	print ('Machine ' + str(current) + ': ' + str(ctime))
 
