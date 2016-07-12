@@ -21,6 +21,8 @@ def reduce():
 			print ('Machine ' + str(current) + ': ' + str(ctime))
 			current = machine
 			ctime = time
+	#print the last item
+	print ('Machine ' + str(current) + ': ' + str(ctime))
 
 if __name__ == '__main__':
 	reduce()
