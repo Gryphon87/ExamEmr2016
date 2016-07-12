@@ -4,19 +4,23 @@ from collections import defaultdict
 
 
 def reduce():
-	results = defaultdict(int)	
+	current = None
+	ctime = 0
 	for pipe in sys.stdin:
 		line = pipe.strip('\n').split('\t')
 		machine = line[0]
 		time = int(line[1])
-		#add the key to the dictionary, adding or incrementing the time value
-		if results[machine] in results:
-			results[machine] = time
+		# the first iteration will override the current var to the machine var
+		if (current == None):
+			current = machine
+		# if the machine doesn't change it will add the time
+		if (machine == current):
+			ctime += time
 		else:
-			results[machine] += time
-
-	for key in sorted(results):
-		print('Macchina ' + key + ': ' + str(results[key]))
+			#print the previous values and reset the current ones
+			print ('Machine ' + current + ': ' + ctime)
+			current = machine
+			ctime = time
 
 if __name__ == '__main__':
 	reduce()
